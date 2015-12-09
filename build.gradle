@@ -1,0 +1,18 @@
+apply plugin: 'application'
+
+repositories {
+  jcenter()
+  mavenCentral()
+  maven {
+      url "https://oss.sonatype.org/service/local/repositories/snapshots/content"
+    }
+}
+
+dependencies {
+    compile (
+      'io.vertx:vertx-web:3.1.0',
+      'com.rethinkdb:rethinkdb-driver:2.2-b1-SNAPSHOT',
+    )
+}
+
+mainClassName = "com.rethinkdb.demo.RethinkDemo"

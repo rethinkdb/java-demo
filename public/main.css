@@ -1,0 +1,69 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #F9FCFC;
+  margin: 0;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  background: #184b5a;
+  padding: 15px;
+  color: white;
+  margin: 0;
+  font-weight: 300;
+}
+
+#chat {
+  height: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.entry {
+  display: flex;
+  padding: 5px;
+}
+
+.entry input {
+  flex-grow: 3;
+}
+
+.entry button {
+  width: 60px;
+  margin-left: 5px;
+}
+
+input, button {
+  padding: 5px;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+#login {
+  padding: 15px;
+}
+
+#login input {
+  width: 300px;
+}
+
+.message {
+  margin: 10px;
+  color: #385A65;
+}
+
+.sender {
+  font-weight: bold;
+}
+
+.sender, .text {
+  display: inline-block;
+}

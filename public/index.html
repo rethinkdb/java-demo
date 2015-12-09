@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>RethinkDB Java Demo</title>
+
+    <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.33/browser.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
+    <script src="vertx-client.js"></script>
+  </head>
+  <body>
+    <h1>RethinkDB Chat Demo</h1>
+
+    <div id="login" v-if="identified == false">
+      <p>Login</p>
+      <input type="text" @keyup.enter="login" v-model="username" placeholder="Username">
+      <button @click="login">Login</button>
+    </div>
+
+    <div id="chat" v-else>
+      <div id="messages">
+        <div class="message" v-for="message in messages">
+          <div class="sender">{{message.user}}:</div>
+          <div class="text">{{message.text}}</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <input type="text" @keyup.enter="sendMessage" v-model="message" placeholder="Type message here">
+        <button @click="sendMessage">Send</button>
+      </div>
+    </div>
+
+    <script src="app.js" type="text/babel"></script>
+  </body>
+</html>
